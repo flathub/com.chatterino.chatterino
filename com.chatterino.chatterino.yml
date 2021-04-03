@@ -29,7 +29,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        commit: 1f5b62e6e5e631fa3ce2d6139fa8251a5b466c59
+        tag: nightly-build
       - type: patch
         path: fix-appdata.patch
     post-install:
