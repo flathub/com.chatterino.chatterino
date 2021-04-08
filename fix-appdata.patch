@@ -14,6 +14,6 @@
          <binary>chatterino</binary>
      </provides>
 +	<releases>
-+	  <release version="nightly" date="2021-04-03"/>
++	  <release version="nightly" date="2021-04-05"/>
 +    </releases>
  </component>
