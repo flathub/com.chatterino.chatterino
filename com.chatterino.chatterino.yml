@@ -23,13 +23,11 @@ modules:
         url: https://dl.bintray.com/boostorg/release/1.75.0/source/boost_1_75_0.tar.bz2
         sha256: 953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb
   - name: chatterino
-    buildsystem: qmake
-    config-opts:
-      - LIBS+=-L/app/lib
+    buildsystem: cmake
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        tag: nightly-build
+        tag: v2.3.0
       - type: patch
         path: fix-appdata.patch
     post-install:
