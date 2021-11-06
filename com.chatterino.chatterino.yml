@@ -25,6 +25,8 @@ modules:
         sha256: 7bd7ddceec1a1dfdcbdb3e609b60d01739c38390a5f956385a12f3122049f0ca
   - name: chatterino
     buildsystem: cmake
+    config-opts:
+      - "-DCMAKE_BUILD_TYPE=Release"
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
