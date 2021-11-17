@@ -29,8 +29,8 @@ modules:
       - "-DCMAKE_BUILD_TYPE=Release"
     sources:
       - type: git
-        url: https://github.com/Chatterino/chatterino2.git
-        tag: v2.3.4
+        url: https://github.com/SevenTV/chatterino7
+        tag: v7.3.4
       - type: patch
         path: streamlink.patch
     post-install:
