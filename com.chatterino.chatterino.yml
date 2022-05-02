@@ -13,6 +13,9 @@ finish-args:
   - --device=dri
   - --env=QT_QPA_PLATFORM=xcb
   - --talk-name=org.freedesktop.Flatpak
+cleanup:
+  - /include
+  - /lib
 modules:
   - name: boost
     buildsystem: simple
