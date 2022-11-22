@@ -30,6 +30,7 @@ modules:
     buildsystem: cmake
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
+      - "-DUSE_SYSTEM_QTKEYCHAIN=ON"
     sources:
       - type: git
         url: https://github.com/chatterino/chatterino2
