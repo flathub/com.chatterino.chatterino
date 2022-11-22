@@ -29,15 +29,15 @@ modules:
   - name: libsecret
     buildsystem: meson
     config-opts:
-    - "-Dmanpage=false"
-    - "-Dvapi=false"
-    - "-Dgtk_doc=false"
+      - "-Dmanpage=false"
+      - "-Dvapi=false"
+      - "-Dgtk_doc=false"
     cleanup:
-    - "/bin"
-    - "/include"
-    - "/lib/pkgconfig"
-    - "/share/gir-1.0"
-    - "/share/man"
+      - "/bin"
+      - "/include"
+      - "/lib/pkgconfig"
+      - "/share/gir-1.0"
+      - "/share/man"
     sources:
     - type: archive
       url: https://download.gnome.org/sources/libsecret/0.20/libsecret-0.20.4.tar.xz
@@ -49,9 +49,9 @@ modules:
         url: https://github.com/frankosterfeld/qtkeychain/archive/v0.13.2.tar.gz
         sha256: 20beeb32de7c4eb0af9039b21e18370faf847ac8697ab3045906076afbc4caa5
     config-opts:
-    - "-DCMAKE_INSTALL_LIBDIR=/app/lib",
-    - "-DLIB_INSTALL_DIR=/app/lib",
-    - "-DBUILD_TRANSLATIONS=NO"
+      - "-DCMAKE_INSTALL_LIBDIR=/app/lib"
+      - "-DLIB_INSTALL_DIR=/app/lib"
+      - "-DBUILD_TRANSLATIONS=NO"
   - name: chatterino
     buildsystem: cmake
     config-opts:
