@@ -33,7 +33,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/chatterino/chatterino2
-        tag: v2.4.0-beta
+        branch: chore/qtkeychain-fork-commit-update
     post-install:
       - install -Dm755 ./resources/icon.png /app/share/icons/hicolor/256x256/apps/chatterino.png
       - install -Dm755 ./resources/com.chatterino.chatterino.appdata.xml /app/share/metainfo/com.chatterino.chatterino.appdata.xml
