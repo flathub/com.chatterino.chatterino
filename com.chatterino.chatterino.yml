@@ -60,8 +60,8 @@ modules:
       - "-DUSE_SYSTEM_QTKEYCHAIN=ON"
     sources:
       - type: git
-        url: https://github.com/chatterino/chatterino2
-        commit: dbaab6cc20603b0fe48a6a82a6bf316a08d51ccc
+        url: https://github.com/Chatterino/chatterino2.git
+        commit: 2ba4da02aecf937c740ef9b0a9f7bd7b8c3ef256
     post-install:
       - install -Dm755 ./resources/icon.png /app/share/icons/hicolor/256x256/apps/chatterino.png
       - install -Dm755 ./resources/com.chatterino.chatterino.appdata.xml /app/share/metainfo/com.chatterino.chatterino.appdata.xml
