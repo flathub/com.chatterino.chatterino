@@ -9,7 +9,7 @@ git pull
 CURRENT_COMMIT=$(yq -r "$COMMIT_YAML_PATH" com.chatterino.chatterino.yml)
 LATEST_COMMIT=$(git ls-remote --refs https://github.com/chatterino/chatterino2/ master | awk '{print substr($1,0,7);}')
 
-if [[ $CURRENT_COMMIT == $LATEST_COMMIT ]]; then
+if [ "$CURRENT_COMMIT" = "$LATEST_COMMIT" ]; then
     echo "Already on latest commit"
 else 
     echo "Updating $CURRENT_COMMIT > $LATEST_COMMIT"
