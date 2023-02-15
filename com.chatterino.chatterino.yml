@@ -66,3 +66,10 @@ modules:
     post-install:
       - install -Dm755 ./resources/icon.png /app/share/icons/hicolor/256x256/apps/chatterino.png
       - install -Dm755 ./resources/com.chatterino.chatterino.appdata.xml /app/share/metainfo/com.chatterino.chatterino.appdata.xml
+  - name: nightly-modes
+    buildsystem: simple
+    build-commands:
+      - install -D modes /app/bin/modes
+    sources:
+      - type: file
+        path: modes
