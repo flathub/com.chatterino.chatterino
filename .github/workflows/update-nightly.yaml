@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        branch: [ brnach/nightly ] # list all branches to check
+        branch: [ branch/nightly ] # list all branches to check
     
     steps:
       - uses: actions/checkout@v3
