@@ -61,7 +61,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        commit: a75feba
+        commit: '4923549'
         x-checker-data:
           type: git
           tag-pattern: ^(nightly-build)$
