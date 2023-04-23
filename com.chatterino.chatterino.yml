@@ -60,8 +60,8 @@ modules:
       - -DUSE_SYSTEM_QTKEYCHAIN=ON
     sources:
       - type: git
-        url: https://github.com/Chatterino/chatterino2.git
-        commit: 6d2605d
+        url: https://github.com/ilya-zlobintsev/chatterino2.git
+        commit: 4611ec1f4d31d6e89f75a280455c65782489d55d
         disable-shallow-clone: true
         disable-fsckobjects: true
         x-checker-data:
