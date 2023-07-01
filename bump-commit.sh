@@ -13,6 +13,8 @@ if [ "$CURRENT_BRANCH" = "$COMMIT_BRANCH_NAME" ]; then
     gh pr merge "$COMMIT_BRANCH_NAME" -m -d
     echo "Merged!"
 
+    gh pr list --json title,number -q '.[] | select(.title | contains("Bump commit to")) | .number' | xargs -L 1 gh pr close
+
     git checkout branch/nightly
 else
     git checkout branch/nightly
