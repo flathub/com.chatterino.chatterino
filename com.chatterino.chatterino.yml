@@ -57,6 +57,7 @@ modules:
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
       - "-DUSE_SYSTEM_QTKEYCHAIN=ON"
+      - "-DBUILD_WITH_QT6=ON"
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
