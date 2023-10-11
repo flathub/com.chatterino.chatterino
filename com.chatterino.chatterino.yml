@@ -1,6 +1,6 @@
 app-id: com.chatterino.chatterino
 runtime: org.kde.Platform
-runtime-version: '5.15-21.08'
+runtime-version: '6.5'
 sdk: org.kde.Sdk
 command: chatterino
 finish-args:
@@ -46,21 +46,25 @@ modules:
     buildsystem: cmake-ninja
     sources:
       - type: archive
-        url: https://github.com/frankosterfeld/qtkeychain/archive/v0.13.2.tar.gz
-        sha256: 20beeb32de7c4eb0af9039b21e18370faf847ac8697ab3045906076afbc4caa5
+        url: https://github.com/frankosterfeld/qtkeychain/archive/0.14.1.tar.gz
+        sha256: afb2d120722141aca85f8144c4ef017bd74977ed45b80e5d9e9614015dadd60c
     config-opts:
       - "-DCMAKE_INSTALL_LIBDIR=/app/lib"
       - "-DLIB_INSTALL_DIR=/app/lib"
       - "-DBUILD_TRANSLATIONS=NO"
+      - "-DBUILD_WITH_QT6=ON"
   - name: chatterino
     buildsystem: cmake
     config-opts:
       - "-DCMAKE_BUILD_TYPE=Release"
       - "-DUSE_SYSTEM_QTKEYCHAIN=ON"
+      - "-DBUILD_WITH_QT6=ON"
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
         tag: v2.4.6
+      - type: patch
+        path: qt6-keychain.patch
     post-install:
       - install -Dm755 ./resources/icon.png /app/share/icons/hicolor/256x256/apps/com.chatterino.chatterino.png
       - install -Dm755 ./resources/com.chatterino.chatterino.appdata.xml /app/share/metainfo/com.chatterino.chatterino.appdata.xml

@@ -1,0 +1,23 @@
+commit 38a7ce695485e080f6e98e17c9b2a01bcbf17744
+Author: pajlada <rasmus.karlsson@pajlada.com>
+Date:   Tue Oct 3 17:59:34 2023 +0200
+
+    Fix qtkeychain include for Qt6 users (#4863)
+
+diff --git a/src/common/Credentials.cpp b/src/common/Credentials.cpp
+index d3bb5ebb..c8a8be90 100644
+--- a/src/common/Credentials.cpp
++++ b/src/common/Credentials.cpp
+@@ -11,7 +11,11 @@
+ 
+ #ifndef NO_QTKEYCHAIN
+ #    ifdef CMAKE_BUILD
+-#        include "qt5keychain/keychain.h"
++#        if QT_VERSION >= QT_VERSION_CHECK(6, 0, 0)
++#            include "qt6keychain/keychain.h"
++#        else
++#            include "qt5keychain/keychain.h"
++#        endif
+ #    else
+ #        include "keychain.h"
+ #    endif
