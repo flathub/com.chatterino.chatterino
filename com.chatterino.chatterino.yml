@@ -63,7 +63,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        commit: a5e8535
+        commit: f2210f7
         disable-shallow-clone: true
         disable-fsckobjects: true
         x-checker-data:
