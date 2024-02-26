@@ -17,13 +17,13 @@ modules:
   - name: boost
     buildsystem: simple
     build-commands:
-      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,headers,filesystem
+      - ./bootstrap.sh --prefix=/app --with-libraries=filesystem,locale,iostreams,program_options,regex,random,thread,headers,filesystem,container
       - ./b2 -j $FLATPAK_BUILDER_N_JOBS install link=static variant=release cxxflags='-fPIE
         -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.76.0/source/boost_1_76_0.tar.gz
-        sha256: 7bd7ddceec1a1dfdcbdb3e609b60d01739c38390a5f956385a12f3122049f0ca
+        url: https://boostorg.jfrog.io/artifactory/main/release/1.84.0/source/boost_1_84_0.tar.gz
+        sha256: a5800f405508f5df8114558ca9855d2640a2de8f0445f051fa1c7c3383045724
     cleanup:
       - /lib
   - name: libsecret
@@ -63,7 +63,7 @@ modules:
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        commit: 4a5d4ef
+        commit: 687b213
         disable-shallow-clone: true
         disable-fsckobjects: true
         x-checker-data:
