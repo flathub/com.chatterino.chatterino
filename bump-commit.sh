@@ -15,9 +15,9 @@ if [ "$CURRENT_BRANCH" = "$COMMIT_BRANCH_NAME" ]; then
 
     gh pr list --json title,number -q '.[] | select(.title | contains("Bump commit to")) | .number' | xargs -L 1 gh pr close
 
-    git checkout branch/nightly
+    git checkout beta
 else
-    git checkout branch/nightly
+    git checkout beta
     git pull
 
     CURRENT_COMMIT=$(yq -r "$COMMIT_YAML_PATH" com.chatterino.chatterino.yml)
@@ -35,7 +35,7 @@ else
         git commit -m "Bump commit to $LATEST_COMMIT"
         git push --set-upstream origin $COMMIT_BRANCH_NAME
 
-        gh pr create -B branch/nightly -b 'This PR was automatically created by a script.' -f
+        gh pr create -B beta -b 'This PR was automatically created by a script.' -f
     fi
 fi
 
