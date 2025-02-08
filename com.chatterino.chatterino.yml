@@ -22,7 +22,7 @@ modules:
         -fstack-protector-strong -D_FORTIFY_SOURCE=2' --layout=system
     sources:
       - type: archive
-        url: https://boostorg.jfrog.io/artifactory/main/release/1.85.0/source/boost_1_85_0.tar.gz
+        url: https://archives.boost.io/release/1.85.0/source/boost_1_85_0.tar.gz
         sha256: be0d91732d5b0cc6fbb275c7939974457e79b54d6f07ce2e3dfdd68bef883b0b
     cleanup:
       - /lib
@@ -60,10 +60,11 @@ modules:
       - -DUSE_SYSTEM_QTKEYCHAIN=ON
       - -DBUILD_WITH_QT6=ON
       - -DCHATTERINO_UPDATER=OFF
+      - -DSKIP_JSON_GENERATION=On
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
-        commit: 5e3412c
+        commit: 0d02a63
         disable-shallow-clone: true
         disable-fsckobjects: true
         x-checker-data:
