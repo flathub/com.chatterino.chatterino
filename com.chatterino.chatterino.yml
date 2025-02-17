@@ -26,6 +26,7 @@ modules:
         sha256: be0d91732d5b0cc6fbb275c7939974457e79b54d6f07ce2e3dfdd68bef883b0b
     cleanup:
       - /lib
+
   - name: libsecret
     buildsystem: meson
     config-opts:
@@ -42,6 +43,7 @@ modules:
       - type: archive
         url: https://download.gnome.org/sources/libsecret/0.21/libsecret-0.21.4.tar.xz
         sha256: 163d08d783be6d4ab9a979ceb5a4fecbc1d9660d3c34168c581301cd53912b20
+
   - name: qtkeychain
     buildsystem: cmake-ninja
     sources:
@@ -53,6 +55,20 @@ modules:
       - -DLIB_INSTALL_DIR=/app/lib
       - -DBUILD_TRANSLATIONS=NO
       - -DBUILD_WITH_QT6=ON
+
+  - name: libnotify
+    buildsystem: meson
+    config-opts:
+      - -Dtests=false
+      - -Dintrospection=disabled
+      - -Dman=false
+      - -Dgtk_doc=false
+      - -Ddocbook_docs=disabled
+    sources:
+      - type: archive
+        url: https://download.gnome.org/sources/libnotify/0.8/libnotify-0.8.3.tar.xz
+        sha256: ee8f3ef946156ad3406fdf45feedbdcd932dbd211ab4f16f75eba4f36fb2f6c0
+
   - name: chatterino
     buildsystem: cmake
     config-opts:
@@ -73,6 +89,7 @@ modules:
     post-install:
       - install -Dm755 ./resources/icon.png /app/share/icons/hicolor/256x256/apps/com.chatterino.chatterino.png
       - install -Dm755 ./resources/com.chatterino.chatterino.appdata.xml /app/share/metainfo/com.chatterino.chatterino.appdata.xml
+
   - name: nightly-modes
     buildsystem: simple
     build-commands:
