@@ -79,3 +79,4 @@ modules:
     sources:
       - type: file
         path: modes
+        commit: cd7272a
