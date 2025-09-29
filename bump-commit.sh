@@ -1,7 +1,7 @@
 #/bin/env bash
 set -e
 
-COMMIT_YAML_PATH=".modules[4].sources[0].commit"
+COMMIT_YAML_PATH=".modules[3].sources[0].commit"
 
 LATEST_COMMIT=$(git ls-remote --refs https://github.com/chatterino/chatterino2/ master | awk '{print substr($1,0,7);}')
 
