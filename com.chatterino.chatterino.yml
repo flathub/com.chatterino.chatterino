@@ -79,3 +79,4 @@ modules:
     sources:
       - type: file
         path: modes
+        commit: f6a820c
