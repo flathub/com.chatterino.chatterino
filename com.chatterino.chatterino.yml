@@ -37,6 +37,7 @@ modules:
       - -DCMAKE_INSTALL_LIBDIR=/app/lib
       - -DLIB_INSTALL_DIR=/app/lib
       - -DBUILD_TRANSLATIONS=NO
+      - -DBUILD_WITH_QT6=ON
 
   - name: chatterino
     buildsystem: cmake
