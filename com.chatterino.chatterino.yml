@@ -26,7 +26,6 @@ modules:
         sha256: be0d91732d5b0cc6fbb275c7939974457e79b54d6f07ce2e3dfdd68bef883b0b
     cleanup:
       - /lib
-
   - name: qtkeychain
     buildsystem: cmake-ninja
     sources:
@@ -38,7 +37,6 @@ modules:
       - -DLIB_INSTALL_DIR=/app/lib
       - -DBUILD_TRANSLATIONS=NO
       - -DBUILD_WITH_QT6=ON
-
   - name: chatterino
     buildsystem: cmake
     config-opts:
@@ -65,3 +63,4 @@ modules:
     sources:
       - type: file
         path: modes
+        commit: f2c4c63
