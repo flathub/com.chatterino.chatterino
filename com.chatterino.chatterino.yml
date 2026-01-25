@@ -63,3 +63,4 @@ modules:
     sources:
       - type: file
         path: modes
+        commit: d6bd009
