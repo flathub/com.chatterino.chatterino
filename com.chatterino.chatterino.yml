@@ -46,6 +46,7 @@ modules:
       - -DUSE_SYSTEM_QTKEYCHAIN=ON
       - -DBUILD_WITH_QT6=ON
       - -DCHATTERINO_UPDATER=OFF
+      - -DCHATTERINO_SPELLCHECK=ON
     sources:
       - type: git
         url: https://github.com/Chatterino/chatterino2.git
